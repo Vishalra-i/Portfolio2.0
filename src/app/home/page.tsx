@@ -1,5 +1,7 @@
 'use client'
 
+import BuyMeCoffee from '@/components/Buyme';
+import SocialBtn from '@/components/SocialBtn';
 import axios from 'axios';
 import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
@@ -43,7 +45,6 @@ function Profile() {
   const [data, setData] = useState<GitHubUser | null>(null);
   const [loading, setLoading] = useState(false);
   const ID = process.env.NEXT_PUBLIC_GITHUB_USERNAME;
-  console.log(ID)
 
   const fetchGitHubData = async () => {
     setLoading(true);
@@ -63,24 +64,36 @@ function Profile() {
   },[]);
 
   return (
-    <div className="w-full min-h-screen flex items-center px-10">
+    <div className="w-full min-h-screen flex items-center justify-between px-10">
       {
       loading && (
         <div className='flex items-center justify-center w-full min-h-screen'>
              <div className="w-10 h-10 p-2 border border-white border-t-4 border-t-black rounded-full animate-spin"></div>
         </div>
       ) }
-      { (
+       { 
         data && (
-          <Image
-            src={data.avatar_url}
-            alt="Profile photo"
-            width={350}
-            height={350}
-            className="rounded-full"
-          />
-        )
+          <div className="flex items-center justify-between w-full">
+                  <div className="w-1/2">
+                    <div className="border  border-t-red-500 rounded-full w-fit h-fit p-3 border-b-yellow-400">
+                     <Image
+                       src={data.avatar_url}
+                       alt="Profile photo"
+                       width={350}
+                       height={350}
+                       className="rounded-full"
+                       />
+                  </div>
+                  </div>
+                 <div className="flex flex-col gap-5  w-1/2">
+                   <h1 className="text-4xl font-bold">{data.name}</h1>
+                   <p className="text-xl">{data.bio}</p>
+                   <BuyMeCoffee width={200} height={40}/>
+                   <SocialBtn/>
+                 </div>
+          </div>
       )}
+     
     </div>
   );
 }

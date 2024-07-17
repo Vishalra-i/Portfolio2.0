@@ -25,7 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="min-h-screen w-full bg-gradient-to-br from-[#3498db] to-[#2ecc71]">
+        <div className="min-h-screen w-full bg-gradient-to-tr from-[#f8fcff] to-[#2ecc71]">
           <div className="relative">
             <Header />
           </div>
