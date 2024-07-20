@@ -64,7 +64,7 @@ function Profile() {
   },[]);
 
   return (
-    <div className="w-full min-h-screen flex items-center justify-between px-10">
+    <section id="home" className="w-full min-h-screen flex items-center justify-between px-10 ">
       {
       loading && (
         <div className='flex items-center justify-center w-full min-h-screen'>
@@ -73,28 +73,28 @@ function Profile() {
       ) }
        { 
         data && (
-          <div className="flex items-center justify-between w-full">
+          <div className="flex items-center justify-between w-full animate-slideInFromLeft text-white">
                   <div className="w-1/2">
-                    <div className="border  border-t-red-500 rounded-full w-fit h-fit p-3 border-b-yellow-400">
+                  <div className="w-fit h-fit p-1 animate-switch rounded-full">
                      <Image
                        src={data.avatar_url}
                        alt="Profile photo"
                        width={350}
                        height={350}
-                       className="rounded-full"
+                       className="rounded-full shadow-xl shadow-slate-600"
                        />
                   </div>
                   </div>
                  <div className="flex flex-col gap-5  w-1/2">
-                   <h1 className="text-4xl font-bold">{data.name}</h1>
-                   <p className="text-xl">{data.bio}</p>
-                   <BuyMeCoffee width={200} height={40}/>
+                   <h1 className="text-4xl font-bold leading-loose">{data.name}</h1>
+                   <p className="text-2xl" >{data.bio}</p>
+                   <BuyMeCoffee width={150} height={30} id={"coffee"} />
                    <SocialBtn/>
                  </div>
           </div>
       )}
      
-    </div>
+    </section>
   );
 }
 
