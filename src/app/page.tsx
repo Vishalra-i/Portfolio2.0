@@ -4,9 +4,9 @@ import Techs from "@/components/Techs"
 
 export default function Home() {
   return (
-    <>
+    <main>
     <Profile/>
     <Techs/>
-    </>
+    </main>
   );
 }

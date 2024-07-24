@@ -9,13 +9,12 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Vishal Rai - Full Stack Developer",
   description: "Vishal Rai is a full stack web developer from Jashpur Nagar, Chhattisgarh. Expertise in HTML, CSS, JavaScript, React, Node.js, Express, and Next.js.",
-  keywords: "Vishal Rai, Full Stack Developer, Web Developer, HTML, CSS, JavaScript, React, Node.js, Express, Next.js, Jashpur Nagar, Chhattisgarh",
+  keywords: "Vishal Rai, Full Stack Developer,Software developer , Software Engineer, Web Developer, HTML, CSS, JavaScript, React, Node.js, Express, Next.js, Jashpur Nagar, Chhattisgarh",
   authors: [{ name: "Vishal Rai" }],
   creator: "Vishal Rai",
   publisher: "Vishal Rai",
   robots: "index, follow",
-  googlebot: "index, follow",
-  googleSiteVerification: "googleSiteVerificationCode",
+
 };
 
 export default function RootLayout({

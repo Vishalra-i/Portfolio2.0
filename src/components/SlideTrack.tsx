@@ -1,6 +1,10 @@
 import React from 'react'
 
-function SlideTrack({className}) {
+interface SlideTrackProps {
+  className: string;
+}
+
+function SlideTrack({className} : SlideTrackProps) {
     const images = [
         "html",
         "css",

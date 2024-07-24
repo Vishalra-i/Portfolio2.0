@@ -78,7 +78,7 @@ function Profile() {
                   <div className="w-fit h-fit p-1 animate-switch rounded-full">
                      <Image
                        src={data.avatar_url}
-                       alt="Profile photo"
+                       alt="Profile photo Vishal Rai"
                        width={350}
                        height={350}
                        className="rounded-full shadow-xl shadow-slate-600"
