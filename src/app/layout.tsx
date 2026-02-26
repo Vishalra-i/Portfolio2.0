@@ -1,20 +1,13 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/Header";
 
 const inter = Inter({ subsets: ["latin"] });
 
-// Metadata for SEO
 export const metadata: Metadata = {
-  title: "Vishal Rai - Full Stack Developer",
-  description: "Vishal Rai is a full stack web developer from Jashpur Nagar, Chhattisgarh. Expertise in HTML, CSS, JavaScript, React, Node.js, Express, and Next.js.",
-  keywords: "Vishal Rai, Full Stack Developer,Software developer , Software Engineer, Web Developer, HTML, CSS, JavaScript, React, Node.js, Express, Next.js, Jashpur Nagar, Chhattisgarh",
-  authors: [{ name: "Vishal Rai" }],
-  creator: "Vishal Rai",
-  publisher: "Vishal Rai",
-  robots: "index, follow",
-
+  title: "Vishal Rai | Freelance Full Stack Developer",
+  description:
+    "Conversion-focused portfolio for Vishal Rai, helping gyms, salons, and coaching institutes get more customer leads with high-performing websites.",
 };
 
 export default function RootLayout({
@@ -24,10 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} relative selection:text-yellow-300 bg-[url('./assets/banner-bg.png')] drop-shadow-md`}>
-            <Header />
-            {children}
-      </body>
+      <body className={inter.className}>{children}</body>
     </html>
   );
 }
