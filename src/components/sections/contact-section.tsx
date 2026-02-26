@@ -13,7 +13,7 @@ export function ContactSection() {
             Tell me about your business and I&apos;ll suggest the best package for maximum lead generation.
           </p>
           <Link
-            href="https://wa.me/919876543210?text=Hi%20Vishal%2C%20I%20want%20a%20website%20demo"
+            href="https://wa.me/918319629246?text=Hi%20Vishal%2C%20I%20want%20a%20website%20demo"
             target="_blank"
             className={buttonVariants({ size: "lg" })}
           >
