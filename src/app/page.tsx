@@ -1,12 +1,21 @@
-import Image from "next/image";
-import Profile from "@/app/home/page"
-import Techs from "@/components/Techs"
+import { ContactSection } from "@/components/sections/contact-section";
+import { Footer } from "@/components/sections/footer";
+import { HeroSection } from "@/components/sections/hero-section";
+import { Navbar } from "@/components/sections/navbar";
+import { PortfolioSection } from "@/components/sections/portfolio-section";
+import { ServicesSection } from "@/components/sections/services-section";
+import { WhyChooseMeSection } from "@/components/sections/why-choose-me-section";
 
 export default function Home() {
   return (
-    <main>
-    <Profile/>
-    <Techs/>
+    <main className="min-h-screen">
+      <Navbar />
+      <HeroSection />
+      <ServicesSection />
+      <PortfolioSection />
+      <WhyChooseMeSection />
+      <ContactSection />
+      <Footer />
     </main>
   );
 }

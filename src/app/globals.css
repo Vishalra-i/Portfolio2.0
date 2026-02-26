@@ -2,6 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
-#coffee:hover{
-    scale: 1.1;
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-slate-950 text-slate-100 antialiased;
+}
+
+@layer base {
+  * {
+    @apply border-slate-800;
+  }
+}
+
+@layer utilities {
+  .section-padding {
+    @apply px-4 py-16 sm:px-6 lg:px-8 lg:py-20;
+  }
+
+  .glass-card {
+    @apply border border-slate-800/90 bg-slate-900/70 backdrop-blur;
+  }
 }
