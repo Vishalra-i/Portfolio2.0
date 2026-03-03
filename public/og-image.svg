@@ -1,0 +1,7 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#F8FAFC"/>
+  <rect x="80" y="80" width="1040" height="470" rx="24" fill="#FFFFFF" stroke="#2563EB" stroke-width="4"/>
+  <text x="140" y="280" fill="#0F172A" font-size="64" font-family="Inter, Arial, sans-serif" font-weight="700">VR Web Solutions</text>
+  <text x="140" y="350" fill="#2563EB" font-size="40" font-family="Inter, Arial, sans-serif">Web Development Services in India</text>
+  <circle cx="980" cy="160" r="44" fill="#22C55E"/>
+</svg>
