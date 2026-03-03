@@ -2,26 +2,68 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --primary: #2563eb;
+  --accent: #22c55e;
+  --section: #f8fafc;
+}
+
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  @apply bg-slate-950 text-slate-100 antialiased;
+  @apply bg-white text-slate-800 antialiased;
 }
 
-@layer base {
-  * {
-    @apply border-slate-800;
+@layer components {
+  .container-main {
+    @apply mx-auto w-full max-w-6xl;
+  }
+
+  .section-padding {
+    @apply px-4 py-14 sm:px-6 lg:px-8 lg:py-20;
+  }
+
+  .section-alt {
+    @apply bg-slate-50 px-4 py-14 sm:px-6 lg:px-8 lg:py-20;
+  }
+
+  .section-title {
+    @apply text-3xl font-bold text-slate-900 sm:text-4xl;
+  }
+
+  .section-copy {
+    @apply mt-3 max-w-3xl text-slate-600;
+  }
+
+  .btn-primary {
+    @apply rounded-lg bg-blue-600 px-5 py-3 text-sm font-semibold text-white transition hover:bg-blue-700;
+  }
+
+  .btn-secondary {
+    @apply rounded-lg border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-700 transition hover:border-blue-600 hover:text-blue-600;
+  }
+
+  .input-field {
+    @apply h-11 w-full rounded-lg border border-slate-300 px-3 text-sm text-slate-800 outline-none ring-blue-200 placeholder:text-slate-400 focus:ring-4 focus:ring-blue-500;
   }
 }
 
 @layer utilities {
-  .section-padding {
-    @apply px-4 py-16 sm:px-6 lg:px-8 lg:py-20;
+  .bg-primary {
+    background-color: var(--primary);
   }
 
-  .glass-card {
-    @apply border border-slate-800/90 bg-slate-900/70 backdrop-blur;
+  .bg-accent {
+    background-color: var(--accent);
+  }
+
+  .bg-section {
+    background-color: var(--section);
+  }
+
+  .text-primary {
+    color: var(--primary);
   }
 }
