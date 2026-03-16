@@ -1,11 +1,11 @@
 export const siteConfig = {
   name: "VR Web Solutions",
   baseUrl: "https://vrwebsolutions.vercel.app",
-  phone: "+91 8319629246",
-  phoneHref: "tel:+918319629246",
+  phone: "+91 8964936883",
+  phoneHref: "tel:+918964936883",
   email: "vishalrai0392@gmail.com",
   whatsappHref:
-    "https://wa.me/918319629246?text=Hi%20VR%20Web%20Solutions%2C%20I%20want%20a%20business%20website%20demo",
+    "https://wa.me/918964936883?text=Hi%20VR%20Web%20Solutions%2C%20I%20want%20a%20business%20website%20demo",
 };
 
 export const cities = ["raipur", "bangalore", "ranchi", "delhi"] as const;
