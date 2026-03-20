@@ -20,7 +20,7 @@ export function Hero({ headingClass }: { headingClass: string }) {
           </p>
           <div className="mt-10 flex flex-col gap-4 sm:flex-row">
             <Link
-              href="#"
+              href="/portfolio"
               className="rounded-lg border border-[#d0d0d0] bg-white/5 px-8 py-3.5 text-center text-base font-semibold text-white shadow-xl transition duration-300 hover:scale-[1.03] hover:border-white"
             >
               View Our Work

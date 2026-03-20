@@ -43,7 +43,7 @@ export function Portfolio({ headingClass }: { headingClass: string }) {
                 <p className="mt-1 text-sm text-black/70">{item.category}</p>
               </div>
               <div className="bg-[#f4f2ee] px-5 py-4">
-                <Link href="#" className="font-semibold text-black">
+                <Link href="/portfolio" className="font-semibold text-black">
                   View Live Website
                 </Link>
               </div>

@@ -92,7 +92,7 @@ export function BusinessCards() {
               </div>
               <p className="mt-3 text-[#bdbdbd]">{card.description}</p>
               <div className="my-5 h-px bg-gradient-to-r from-[#d4af37]/35 to-transparent" />
-              <Link href="#" className="inline-flex items-center gap-2 text-lg font-semibold text-white">
+              <Link href="/services" className="inline-flex items-center gap-2 text-lg font-semibold text-white">
                 View Demo
                 <span className="text-xs">▾</span>
               </Link>
