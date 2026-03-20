@@ -100,7 +100,7 @@ export function HomeSections() {
               <blockquote key={item.name} className="rounded-xl border border-slate-200 bg-white p-5">
                 <p className="text-slate-700">“{item.quote}”</p>
                 <footer className="mt-3 text-sm font-semibold text-primary">
-                  {item.name} · {item.city}
+                  {item.name} · {item.business}
                 </footer>
               </blockquote>
             ))}

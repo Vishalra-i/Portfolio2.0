@@ -1,55 +1,46 @@
-import Link from "next/link";
-import { Inter, Playfair_Display } from "next/font/google";
 import { ContactForm } from "@/app/components/contact-form";
-import { siteConfig } from "@/app/components/site-data";
+import { CtaButtons } from "@/components/site/cta-buttons";
+import { buildMetadata } from "@/lib/seo";
+import { servicePackages } from "@/lib/site";
 
-const inter = Inter({ subsets: ["latin"], display: "swap" });
-const playfair = Playfair_Display({ subsets: ["latin"], display: "swap", weight: ["600", "700"] });
+export const metadata = buildMetadata({
+  title: "Get a Website Quote for Starter, Store, and Premium Packages",
+  description:
+    "Request a quote for your local business website, store catalogue site, or premium lead-generation package.",
+  path: "/get-quote",
+  keywords: ["website quote", "starter pack website", "store owner website package"],
+});
 
 export default function GetQuotePage() {
   return (
-    <main
-      className={`${inter.className} min-h-screen bg-[radial-gradient(circle_at_top,#2c2c2c_0%,#161616_38%,#111111_68%,#0b0b0b_100%)] text-white`}
-    >
-      <section className="py-24">
-        <div className="mx-auto grid w-full max-w-7xl gap-10 px-4 md:px-6 lg:grid-cols-2 lg:px-8">
+    <main>
+      <section className="section-padding bg-slate-950 text-white">
+        <div className="container-main grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
           <div>
-            <p className="inline-flex rounded-lg border border-[#d4af37]/45 px-4 py-2 text-sm text-[#d4af37]">
-              Get Quotes
-            </p>
-            <h1 className={`${playfair.className} mt-6 text-5xl text-white sm:text-6xl`}>
-              Starter Pack for Local Businesses
+            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-blue-200">Get quote</p>
+            <h1 className="mt-4 text-4xl font-extrabold tracking-tight sm:text-5xl">
+              Choose a package and get a website plan tailored to your business.
             </h1>
-            <div className="mt-8 rounded-xl border border-[#3a3a3a] bg-[#1a1a1a] p-7 shadow-xl">
-              <h2 className={`${playfair.className} text-3xl`}>Starter Pack</h2>
-              <p className="mt-3 text-4xl font-semibold text-[#d4af37]">₹7,999</p>
-              <ul className="mt-5 space-y-2 text-[#d0d0d0]">
-                <li>• 1-page modern website</li>
-                <li>• Mobile responsive design</li>
-                <li>• WhatsApp chat integration</li>
-                <li>• Contact form and lead capture</li>
-                <li>• Basic SEO setup</li>
-              </ul>
-            </div>
+            <p className="mt-4 max-w-2xl text-lg text-slate-300">
+              The Starter Pack still begins at ₹7,999, and we now offer richer package options so
+              store owners and growing brands can choose the right level of content and conversion support.
+            </p>
+            <CtaButtons className="mt-8" />
 
-            <div className="mt-8 flex flex-wrap gap-4">
-              <Link
-                href={siteConfig.whatsappHref}
-                target="_blank"
-                className="rounded-lg bg-[#d4af37] px-6 py-3 font-semibold text-black shadow-xl transition duration-300 hover:scale-[1.03] hover:bg-[#c79b2c]"
-              >
-                Chat on WhatsApp
-              </Link>
-              <Link
-                href="/"
-                className="rounded-lg border border-white/30 px-6 py-3 font-semibold text-white transition duration-300 hover:scale-[1.03]"
-              >
-                Back to Home
-              </Link>
+            <div className="mt-10 grid gap-4">
+              {servicePackages.map((pkg) => (
+                <article key={pkg.slug} className="rounded-3xl border border-white/10 bg-white/5 p-5">
+                  <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+                    <h2 className="text-2xl font-bold">{pkg.name}</h2>
+                    <p className="text-xl font-extrabold text-blue-200">{pkg.price}</p>
+                  </div>
+                  <p className="mt-2 text-sm leading-6 text-slate-300">{pkg.summary}</p>
+                </article>
+              ))}
             </div>
           </div>
 
-          <div className="rounded-xl border border-[#3a3a3a] bg-[#1a1a1a]/70 p-3 shadow-xl">
+          <div className="rounded-[2rem] border border-white/10 bg-white/5 p-4 shadow-2xl">
             <ContactForm />
           </div>
         </div>

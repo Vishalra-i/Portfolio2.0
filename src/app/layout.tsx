@@ -1,57 +1,75 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { siteConfig } from "@/app/components/site-data";
+import { SiteFooter } from "@/components/site/site-footer";
+import { SiteHeader } from "@/components/site/site-header";
+import { SchemaScript } from "@/components/site/schema-script";
+import { organizationSchema, websiteSchema } from "@/lib/seo";
+import { siteConfig } from "@/lib/site";
 
 const inter = Inter({ subsets: ["latin"], display: "swap" });
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.baseUrl),
   title: {
-    default: "Web Development Services in India | VR Web Solutions",
+    default: "VR Web Solutions | SEO-Ready Websites for Local Businesses in India",
     template: "%s | VR Web Solutions",
   },
-  description:
-    "We help businesses get more customers through modern websites. Get your business website with WhatsApp integration and lead generation.",
+  description: siteConfig.description,
+  applicationName: siteConfig.name,
   keywords: [
-    "web development",
-    "website design",
-    "business website India",
-    "web developer",
+    "web development services India",
+    "local business website design",
+    "Next.js agency website",
+    "SEO website for store owners",
+    "business website with WhatsApp integration",
   ],
+  authors: [{ name: siteConfig.name }],
+  creator: siteConfig.name,
+  publisher: siteConfig.name,
+  category: "business",
+  alternates: {
+    canonical: siteConfig.baseUrl,
+  },
   openGraph: {
-    title: "Web Development Services in India | VR Web Solutions",
-    description:
-      "We help businesses get more customers through modern websites. Get your business website with WhatsApp integration and lead generation.",
+    title: "VR Web Solutions | SEO-Ready Websites for Local Businesses in India",
+    description: siteConfig.description,
     url: siteConfig.baseUrl,
+    siteName: siteConfig.name,
+    locale: "en_IN",
+    type: "website",
     images: [
       {
-        url: "/og-image.svg",
+        url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "VR Web Solutions",
+        alt: siteConfig.name,
       },
     ],
-    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "VR Web Solutions | SEO-Ready Websites for Local Businesses in India",
+    description: siteConfig.description,
+    images: ["/opengraph-image"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 };
 
-const localBusinessSchema = {
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  name: "VR Web Solutions",
-  description: "Web Development and Local SEO Services",
-  areaServed: ["India", "Raipur", "Bangalore", "Ranchi", "Delhi"],
-  telephone: "+91 98765 43210",
-  email: "hello@vrwebsolutions.in",
-  url: siteConfig.baseUrl,
-  makesOffer: {
-    "@type": "Offer",
-    itemOffered: {
-      "@type": "Service",
-      name: "Web Development",
-    },
-  },
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#0f172a",
 };
 
 export default function RootLayout({
@@ -62,11 +80,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        {children}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
-        />
+        <SchemaScript schema={[organizationSchema(), websiteSchema()]} />
+        <div className="min-h-screen bg-white text-slate-900">
+          <SiteHeader />
+          {children}
+          <SiteFooter />
+        </div>
       </body>
     </html>
   );

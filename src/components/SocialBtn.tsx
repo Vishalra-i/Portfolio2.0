@@ -4,7 +4,7 @@ function SocialBtn() {
   return (
     <div className="flex items-center gap-4">
   {/* Instagram */}
-  <a href="https://www.instagram.com/vishal____rai">
+  <a href="https://www.instagram.com/vishal____rai" target="_blank" rel="noreferrer">
       <div className="social-button">
     <button className="relative w-12 h-12 rounded-full group">
       <div
@@ -34,7 +34,7 @@ function SocialBtn() {
       </div>
   </a>
   {/* TWitter  */}
-  <a href="https://x.com/Vishal____rai">
+  <a href="https://x.com/Vishal____rai" target="_blank" rel="noreferrer">
      <div className="social-button">
     <button className="relative w-12 h-12 rounded-full group">
       <div
@@ -60,7 +60,7 @@ function SocialBtn() {
      </div>
   </a>
   {/* Youtube  */}
-  <a href="#">
+  <a href="https://www.youtube.com/@vrwebsolutions" target="_blank" rel="noreferrer">
       <div className="social-button">
     <button className="relative w-12 h-12 rounded-full group">
       <div
@@ -90,7 +90,7 @@ function SocialBtn() {
       </div>
   </a>
   {/* //Linkedin */}
-  <a href="https://www.linkedin.com/in/vishalrai07/">
+  <a href="https://www.linkedin.com/in/vishalrai07/" target="_blank" rel="noreferrer">
   <div className="social-button">
         <button className="relative w-12 h-12 rounded-full group">
           <div
@@ -116,7 +116,7 @@ function SocialBtn() {
       </div>
   </a>
   {/* //  Github  */}
-  <a href="https://github.com/Vishalra-i">
+  <a href="https://github.com/Vishalra-i" target="_blank" rel="noreferrer">
   <div className="social-button">
         <button className="relative w-12 h-12 rounded-full group">
           <div
