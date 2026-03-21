@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import { SiteFooter } from "@/components/site/site-footer";
 import { SiteHeader } from "@/components/site/site-header";
@@ -11,12 +12,16 @@ const inter = Inter({ subsets: ["latin"], display: "swap" });
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.baseUrl),
+
   title: {
-    default: "VR Web Solutions | SEO-Ready Websites for Local Businesses in India",
-    template: "%s | VR Web Solutions",
+    default: "VR Web Solution | SEO-Ready Websites for Local Businesses in India",
+    template: "%s | VR Web Solution",
   },
+
   description: siteConfig.description,
+
   applicationName: siteConfig.name,
+
   keywords: [
     "web development services India",
     "local business website design",
@@ -24,15 +29,29 @@ export const metadata: Metadata = {
     "SEO website for store owners",
     "business website with WhatsApp integration",
   ],
+
   authors: [{ name: siteConfig.name }],
   creator: siteConfig.name,
   publisher: siteConfig.name,
+
   category: "business",
+
   alternates: {
     canonical: siteConfig.baseUrl,
   },
+
+  // ✅ ADD ICONS (IMPORTANT)
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/apple-icon.png",
+  },
+
+  // ✅ ADD MANIFEST
+  manifest: "/site.webmanifest",
+
   openGraph: {
-    title: "VR Web Solutions | SEO-Ready Websites for Local Businesses in India",
+    title: "VR Web Solution | SEO-Ready Websites for Local Businesses in India",
     description: siteConfig.description,
     url: siteConfig.baseUrl,
     siteName: siteConfig.name,
@@ -47,12 +66,14 @@ export const metadata: Metadata = {
       },
     ],
   },
+
   twitter: {
     card: "summary_large_image",
-    title: "VR Web Solutions | SEO-Ready Websites for Local Businesses in India",
+    title: "VR Web Solution | SEO-Ready Websites for Local Businesses in India",
     description: siteConfig.description,
     images: ["/opengraph-image"],
   },
+
   robots: {
     index: true,
     follow: true,
@@ -69,33 +90,40 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#0f172a",
+  themeColor: "#0A66FF", // 🔵 better branding
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
-      <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-835389673"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'AW-835389673');
-</script>
-
       <body className={inter.className}>
+        
+        {/* ✅ GOOGLE ADS SCRIPT FIX */}
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=AW-835389673"
+        />
+        <Script id="google-ads">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-835389673');
+          `}
+        </Script>
+
         <SchemaScript schema={[organizationSchema(), websiteSchema()]} />
+
         <div className="min-h-screen bg-white text-slate-900">
           <SiteHeader />
           {children}
           <SiteFooter />
         </div>
+
       </body>
     </html>
   );
