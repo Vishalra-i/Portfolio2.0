@@ -79,6 +79,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-835389673"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-835389673');
+</script>
+
       <body className={inter.className}>
         <SchemaScript schema={[organizationSchema(), websiteSchema()]} />
         <div className="min-h-screen bg-white text-slate-900">
